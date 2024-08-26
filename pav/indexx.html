@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN link--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Montserrat Google Font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Hotel Webpage</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./hotellogo.jpg" alt="Your Image" class="drop-shadow">
+               Hotels
+        </div>
+
+        <ul class="menu-list">
+            <li class="active">Home</li>
+            <li>Services</li>
+            <li>About Us</li>
+            <li>Contacts</li>
+        </ul>
+    </header>
+
+    <section class="main">
+        <section class="left">
+            <p class="title">Are you ready to <strong>Visit the Hotel</strong></p>
+            <p class="msg">True Hospitality consists of giving the best of yourself to your guests. A Hotel should lift your spirits, not only put you to Sleep. Super Luxury hotels are being built in outer space, the new type of heaven is being offered to humans.</p>
+            <button class="cta" onclick="showRegistrationForm()">
+                <span>Book Now</span>
+                <i class="fas fa-angle-right"></i>
+            </button>
+        </section>
+
+        <!-- Registration Form -->
+        <div id="registrationForm" class="registration-form" style="display:none;">
+            <h2>Guest Information</h2>
+            <form id="registration" action="connection.php" method="post" enctype="multipart/form-data">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+
+                <label for="booking_date">Date:</label>
+                <input type="date" id="booking_date" name="booking_date" required>
+
+                <label for="room_type">Room Type:</label>
+                <select id="room_type" name="room_type" required>
+                    <option value="single">Single with AC [3000 per day]</option>
+                    <option value="double">Double with AC [6000 per day]</option>
+                    <option value="ac">Single without AC [2000 per day]</option>
+                    <option value="general">Double without AC [4000 per day]</option>
+                </select>
+
+                <label for="days">Number of Days:</label>
+                <input type="number" id="days" name="days" required>
+
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+
+                <label for="payment_method">Payment Method:</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="paypal">PhonePay</option>
+                    <option value="cash">Google Pay</option>
+                </select>
+
+                <label for="account_number" id="card-number-label" style="display:none;">Account Number:</label>
+                <input type="text" id="account_number" name="account_number" style="display:none;">
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function showRegistrationForm() {
+            document.getElementById('registrationForm').style.display = 'block';
+        }
+
+        document.getElementById('payment_method').addEventListener('change', function() {
+            var paymentMethod = this.value;
+            var cardFields = ['card-number-label', 'account_number'];
+            if (paymentMethod === 'card') {
+                cardFields.forEach(function(id) {
+                    document.getElementById(id).style.display = 'block';
+                });
+            } else {
+                cardFields.forEach(function(id) {
+                    document.getElementById(id).style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

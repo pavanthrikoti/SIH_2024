@@ -1,0 +1,202 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #3e3e3e;
+    background: url(./bg5.avif) no-repeat 0 0;
+    background-size: cover;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 64px;
+    font-size: 1.2em;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight background for better visibility */
+}
+
+.logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.4em;
+    letter-spacing: 0.5px;
+}
+
+.drop-shadow {
+    width: 50px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.menu-list li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 44px;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.menu-list li.active,
+.menu-list li:hover {
+    color: #ff0073;
+}
+
+.main {
+    padding-top: 90px;
+    position: relative;
+    flex: 1;
+    display: flex;
+}
+
+.left {
+    max-width: 50%;
+    padding: 0 64px;
+}
+
+.title {
+    font-size: 2.8em;
+    letter-spacing: 1px;
+    margin: 48px auto;
+}
+
+.title strong {
+    font-size: 1.5em;
+    display: block;
+    line-height: 80px;
+}
+
+.msg {
+    max-width: 80%;
+    font-size: 1.3em;
+    letter-spacing: 0.7px;
+    line-height: 32px;
+    margin-bottom: 48px;
+}
+
+button.cta {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #36dbb5;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 7px 12px 20px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+button.cta:hover {
+    background-color: #fdf3f8;
+}
+
+button span {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+button.cta i {
+    font-size: 1.7em;
+    margin-left: 16px;
+}
+
+/* Registration Form Styles */
+.registration-form {
+    display: none; /* Initially hidden */
+    position: relative; /* For absolute positioning of the close button */
+    max-width: 50%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.registration-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.registration-form button[type="submit"] {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    padding: 12px;
+    border: none;
+    background-color: #36dbb5;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.registration-form button[type="submit"]:hover {
+    background-color: #2a9d8f;
+    transform: translateY(-2px);
+}
+
+.registration-form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Close Button for the Registration Form */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
